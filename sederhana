@@ -1,0 +1,91 @@
+package DominikusYornando; //Kalian ganti sesuai nama Package kalian
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class UAS_NO2FIX { //Kalian ganti sesuai nama Class kalian
+	
+	static boolean isRunning = true;
+	static InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+	static BufferedReader input = new BufferedReader(inputStreamReader);
+	
+	static void showMenu() throws IOException{
+		System.out.println("=============RUMUS MATEMATIKA=============");
+		System.out.println("[1] Menghitung Luas Segitiga");
+		System.out.println("[2] Menghitung Luas Lingkaran");
+		System.out.println("[3] Menghitung Keliling Lingkaran");
+		System.out.println("[4] Menghitung Luas Bujur Sangkar");
+		System.out.println("[5] EXIT");
+		System.out.println(" ");
+		System.out.print("PILIH MENU : ");
+		int selectedMenu = Integer.valueOf(input.readLine());
+
+		switch(selectedMenu) {
+		case 1:
+			LS();
+			break;
+		case 2:
+			LL();
+			break;
+		case 3:
+			KL();
+			break;
+		case 4:
+			LBS();
+			break;
+		case 5:
+			System.exit(0);
+			break;
+		default:
+			System.out.println("Pilihan salah!");
+		}
+	}
+	
+	static void LS() throws IOException {
+		System.out.print("Masukan Nilai Alas	: ");
+		float alas = Float.parseFloat(input.readLine());
+		System.out.print("Masukan Nilai Tinggi	: ");
+		float tinggi = Float.parseFloat(input.readLine());
+		float hasil = (float) (0.5 * alas * tinggi);
+		System.out.println(" ");
+		System.out.println("Luas Segitiga adalah " + hasil);
+		System.out.println(" ");
+	}
+	
+	static void LL() throws IOException {
+		System.out.print("Masukan Nilai Jari-jari	: ");
+		float jari = Float.parseFloat(input.readLine());
+		float hasil = (float) (3.14 * jari);
+		System.out.println(" ");
+		System.out.println("Luas Lingkaran adalah " + hasil);
+		System.out.println(" ");
+	}
+	
+	static void KL() throws IOException {
+		System.out.print("Masukan Nilai Jari-jari	: ");
+		float jari = Float.parseFloat(input.readLine());
+		float hasil = (float) (2 * 3.14 * jari);
+		System.out.println(" ");
+		System.out.println("Keliling Lingkaran adalah " + hasil);
+		System.out.println(" ");
+	}
+	
+	static void LBS() throws IOException {
+		System.out.print("Masukan Nilai Sisi	: ");
+		float sisi = Float.parseFloat(input.readLine());
+		float hasil = (float) (sisi * sisi);
+		System.out.println(" ");
+		System.out.println("Luas Bujur Sangkar adalah " + hasil);
+		System.out.println(" ");
+	}
+	
+	public static void main(String[] args) throws IOException{
+		
+		do {
+			showMenu();
+		} while (isRunning);
+		
+	}
+
+}
